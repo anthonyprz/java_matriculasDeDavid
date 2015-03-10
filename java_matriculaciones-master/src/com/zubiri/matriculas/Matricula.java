@@ -4,13 +4,11 @@ import java.util.Scanner;
 
 public class Matricula extends Asignatura {
 	
-	int añoMatriculacion;
-    double precio;
+	static int añoMatriculacion;
+    static double precio;
     
- Scanner sc = new Scanner(System.in);
-    
-    	
-    	
+    Scanner sc = new Scanner(System.in);
+        	
   	public Matricula (Scanner sc){
   		super(sc);
   		try{
@@ -22,9 +20,9 @@ public class Matricula extends Asignatura {
 		sc.nextLine();
   			
   		}
-  		this.setAñoMatriculacion(sc.nextInt());
+  		//this.setAñoMatriculacion(sc.nextInt());
   		try{
-  			System.out.println("En que departamento se aloja?");
+  			System.out.println("cual es el precio?");
   		this.setPrecio(sc.nextDouble());
   			
   		}catch(InputMismatchException e){
@@ -35,18 +33,10 @@ public class Matricula extends Asignatura {
   		}
   	
   	
-  	public String formattedMatricula() {
-		String asignatura =
-				super.formattedAsignatura() +
-				"\nAño Matriculacion\t" + this.getAñoMatriculacion()
-				+ "\nPrecio:\t" + this.getPrecio();
-				
-				return asignatura;
-	}
-    
+ 
 
 	
-	public int getAñoMatriculacion() {
+	public static int getAñoMatriculacion() {
 		return añoMatriculacion;
 	}
 	
@@ -54,13 +44,23 @@ public class Matricula extends Asignatura {
 		this.añoMatriculacion = añoMatriculacion;
 	}
 	
-	public double getPrecio() {
+	public static double getPrecio() {
 		return precio;
 	}
 
 	public void setPrecio(double precio) {
 		this.precio = precio;
 	}
+	
+	public static String formattedMatricula() {
+		String asignatura =
+				formattedAsignatura() +
+				"\nAño Matriculacion\t" + getAñoMatriculacion()
+				+ "\nPrecio:\t" + getPrecio();
+				
+				return asignatura;
+	}
+    
     
 	
 	/**
@@ -77,13 +77,9 @@ public class Matricula extends Asignatura {
   			sc.nextLine();
  			
   		}
-		
-		
+				
 		System.out.println("entonces el descuento final  sera de :" + (getPrecio()*porcentaje) / 100 );
 		double descuento = (getPrecio()*porcentaje) / 100 ;
-		
-		
-		
 		
 	}
 	

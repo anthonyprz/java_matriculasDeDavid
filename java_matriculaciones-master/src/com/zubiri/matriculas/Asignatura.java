@@ -4,21 +4,20 @@ import java.util.Scanner;
 
 public class Asignatura {
 
-	String nombre;
-	int creditos;
-	Profesor profesor;
+	static String nombre;
+	static int creditos;
+	static Profesor profesor;
 	
-	
-	
-public Asignatura (Scanner sc){
-  		
+	public Asignatura (Scanner sc){
+		System.out.println("----vamos a crear una asignatura----");
   		System.out.println("Nombre de la asignatura ?:");
   		this.setNombre(sc.next());
   		System.out.println("Cuantos Creditos?");
   		this.setCreditos(sc.nextInt());
+  		System.out.println("añadimos un profesor");
   		this.setProfesor(new Profesor(sc));
   			
-  		}
+  	}
   	
   	//contructor 2º
   public Asignatura (String nombre, int creditos,Profesor profesor) {
@@ -30,7 +29,7 @@ public Asignatura (Scanner sc){
   	}
 	
 	
-	public String getNombre() {
+	public static String getNombre() {
 		return nombre;
 	}
 	
@@ -38,7 +37,7 @@ public Asignatura (Scanner sc){
 		this.nombre = nombre;
 	}
 	
-	public int getCreditos() {
+	public static int getCreditos() {
 		return creditos;
 	}
 	
@@ -46,7 +45,7 @@ public Asignatura (Scanner sc){
 		this.creditos = creditos;
 	}
 	
-	public Profesor getProfesor() {
+	public static Profesor getProfesor() {
 		return profesor;
 	}
 	
@@ -63,12 +62,12 @@ public Asignatura (Scanner sc){
 	 * @return String
 	 */
 	
-	public String formattedAsignatura() {
+	public static String formattedAsignatura() {
 		String asignatura =
-				"\nNombre de la asignatura\t" + this.getNombre()
-				+ "\nCreditos:\t" + this.getCreditos()
-				 + "\nProfesor:\t" + this.getProfesor()
-				 + "\nCreditos:\t" + this.getCreditos()
+				"\nNombre de la asignatura\t" + getNombre()
+				+ "\nCreditos:\t" + getCreditos()
+				 + "\nProfesor:\t" + getProfesor().getNombre()
+				 + "\nCreditos:\t" + getCreditos()
 				 ;
 				
 				return asignatura;

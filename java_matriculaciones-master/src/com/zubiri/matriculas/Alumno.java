@@ -2,27 +2,29 @@ package com.zubiri.matriculas;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Alumno extends Persona {
 	
 	
 	ArrayList<Matricula> matriculas = null;
-	int añoInscripcion = -1;
+	static int añoInscripcion = -1;
 	//Ciclo que cursa el alumno
-	String ciclo = null;
+	static String ciclo = null;
 	
 	
 	
 	public Alumno (){}
 	
-	public Alumno(int añoInscripcion, String ciclo) {
-		
+	public Alumno(String dni, String nombre, String apellido, int añoInscripcion, String ciclo) {
+	
+		this.dni = dni;
+		this.nombre = nombre;
+		this.apellido = apellido;
 		this.añoInscripcion = añoInscripcion;
 		this.ciclo = ciclo;
 		
 	}
-	public Alumno(Scanner sc){
+	public  Alumno(Scanner sc){
 	super(sc);
 	try{	System.out.println("Introduce el ano de inscripcion:");
 	this.setAñoInscripcion(sc.nextInt());}
@@ -38,19 +40,17 @@ public class Alumno extends Persona {
 
 	}
 	
-
-	
 	//creado Por Mi
-	public String formattedAlumno() {
+	public static String formattedAlumno() {
 		String alumno =
-				super.formattedPersona() +
-				"\nAño de inscripcion::\t" + this.getAñoInscripcion()
-				+ "\nNombre del ciclo:\t" + this.getCiclo();
+				formattedPersona() +
+				"\nAño de inscripcion::\t" + getAñoInscripcion()
+				+ "\nNombre del ciclo:\t" + getCiclo();
 				
 				return alumno;
 	}
 
-	public int getAñoInscripcion(){
+	public static int getAñoInscripcion(){
 		return añoInscripcion;
 	}
 	
@@ -66,7 +66,7 @@ public class Alumno extends Persona {
 		this.matriculas = matriculas;
 	}
 	
-	public String getCiclo() {
+	public static String getCiclo() {
 		return ciclo;
 	}
 

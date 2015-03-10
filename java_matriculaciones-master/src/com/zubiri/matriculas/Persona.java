@@ -4,11 +4,9 @@ import java.util.Scanner;
 
 public abstract class Persona {
 	
-	String dni;
-	String nombre;
-	String apellido;
-
-	
+	static String dni;
+	static String nombre;
+	static String apellido;
 	
 	public Persona (){}
 	
@@ -28,10 +26,7 @@ public abstract class Persona {
 	this.setApellido(sc.next());
 		
 	}
-	
-	
-	
-	public String getDni() {
+	public static String getDni() {
 		return dni;
 	}
 	
@@ -39,7 +34,7 @@ public abstract class Persona {
 		this.dni = dni;
 	}
 	
-	public String getNombre() {
+	public static String getNombre() {
 		return nombre;
 	}
 	
@@ -47,7 +42,7 @@ public abstract class Persona {
 		this.nombre = nombre;
 	}
 	
-	public   String getApellido() {
+	public  static String getApellido() {
 		return apellido;
 	}
 	
@@ -64,11 +59,11 @@ public abstract class Persona {
 	 * @return String
 	 */
 	
-	public  String formattedPersona() {
+	public static String formattedPersona() {
 		String persona =
-				"\nDNI:\t" + this.getDni()
-				+ "\nNombre:\t" + this.getNombre()
-				 + "\nApellido:\t" + this.getApellido();
+				"\nDNI:\t" + getDni()
+				+ "\nNombre:\t" + getNombre()
+				 + "\nApellido:\t" + getApellido();
 				
 				return persona;
 	}
@@ -83,8 +78,5 @@ public abstract class Persona {
 		this.setDni(strArray[0]);
 		this.setNombre(strArray[1]);
 		this.setApellido(strArray[2]);
-		
-
-		
 	}
 }

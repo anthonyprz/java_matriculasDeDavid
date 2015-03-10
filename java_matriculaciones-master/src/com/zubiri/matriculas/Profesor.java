@@ -4,42 +4,35 @@ import java.util.Scanner;
 
 public class Profesor extends Persona {
 	
-	String titulacion;
-	String departamento;
+	static String titulacion;
+	static String departamento;
 	
 	//Constructor 1º
-	
-	public Profesor (Scanner sc){
-		
-		System.out.println("cual es la titulacion ?:");
-		this.setTitulacion(sc.next());
-		System.out.println("En que departamento se aloja?");
-		this.setDepartamento(sc.next());
-		
-			
-		}
-	
-	//contructor 2º
-public Profesor(String titulacion, String departamento) {
+	public Profesor(String titulacion, String departamento) {
 		
 		this.titulacion = titulacion;
 		this.departamento = departamento;
 		
 	}
-	
-public String formattedProfesor() {
-	String profesor =
-			super.formattedPersona() +
-			"\nAño de inscripcion::\t" + this.getTitulacion()
-			+ "\nNombre del ciclo:\t" + this.getDepartamento();
-			
-			return profesor;
-}
+	//contructor 2º
+	public Profesor (Scanner sc){
+		super(sc);		
+		System.out.println("cual es la titulacion ?:");
+		this.setTitulacion(sc.next());
+		System.out.println("En que departamento se aloja?");
+		this.setDepartamento(sc.next());			
+		}
 
+	public static String formattedProfesor() {
+		String profesor =
+				formattedPersona() +
+				"\nAño de inscripcion::\t" + getTitulacion()
+				+ "\nNombre del ciclo:\t" + getDepartamento();
+				
+				return profesor;
+	}
 
-
-
-	public String getTitulacion() {
+	public static String getTitulacion() {
 		return titulacion;
 	}
 	
@@ -47,7 +40,7 @@ public String formattedProfesor() {
 		this.titulacion = titulacion;
 	}
 	
-	public String getDepartamento() {
+	public static String getDepartamento() {
 		return departamento;
 	}
 	
