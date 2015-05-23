@@ -41,7 +41,7 @@ public class Matricula extends Asignatura {
 	}
 	
 	public void setAñoMatriculacion(int añoMatriculacion) {
-		this.añoMatriculacion = añoMatriculacion;
+		Matricula.añoMatriculacion = añoMatriculacion;
 	}
 	
 	public static double getPrecio() {
@@ -49,7 +49,7 @@ public class Matricula extends Asignatura {
 	}
 
 	public void setPrecio(double precio) {
-		this.precio = precio;
+		Matricula.precio = precio;
 	}
 	
 	public static String formattedMatricula() {
@@ -78,8 +78,8 @@ public class Matricula extends Asignatura {
  			
   		}
 				
-		System.out.println("entonces el descuento final  sera de :" + (getPrecio()*porcentaje) / 100 );
-		double descuento = (getPrecio()*porcentaje) / 100 ;
+	//	System.out.println("entonces el descuento final  sera de :" + (getPrecio()*porcentaje) / 100 );
+//		double descuento = (getPrecio()*porcentaje) / 100 ;
 		
 	}
 	

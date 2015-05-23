@@ -10,8 +10,8 @@ public class Profesor extends Persona {
 	//Constructor 1º
 	public Profesor(String titulacion, String departamento) {
 		
-		this.titulacion = titulacion;
-		this.departamento = departamento;
+		Profesor.titulacion = titulacion;
+		Profesor.departamento = departamento;
 		
 	}
 	//contructor 2º
@@ -37,7 +37,7 @@ public class Profesor extends Persona {
 	}
 	
 	public void setTitulacion(String titulacion) {
-		this.titulacion = titulacion;
+		Profesor.titulacion = titulacion;
 	}
 	
 	public static String getDepartamento() {
@@ -45,7 +45,7 @@ public class Profesor extends Persona {
 	}
 	
 	public void setDepartamento(String departamento) {
-		this.departamento = departamento;
+		Profesor.departamento = departamento;
 	}
 	
 }

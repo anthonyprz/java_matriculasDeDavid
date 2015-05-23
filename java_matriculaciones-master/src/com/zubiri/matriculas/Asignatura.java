@@ -22,9 +22,9 @@ public class Asignatura {
   	//contructor 2º
   public Asignatura (String nombre, int creditos,Profesor profesor) {
   		
-  		this.nombre = nombre;
-  		this.creditos = creditos;
-  		this.profesor = profesor;
+	  Asignatura.nombre = nombre;
+	  Asignatura.creditos = creditos;
+	  Asignatura.profesor = profesor;
   		
   	}
 	
@@ -34,7 +34,7 @@ public class Asignatura {
 	}
 	
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		Asignatura.nombre = nombre;
 	}
 	
 	public static int getCreditos() {
@@ -42,7 +42,7 @@ public class Asignatura {
 	}
 	
 	public void setCreditos(int creditos) {
-		this.creditos = creditos;
+		Asignatura.creditos = creditos;
 	}
 	
 	public static Profesor getProfesor() {
@@ -50,7 +50,7 @@ public class Asignatura {
 	}
 	
 	public void setProfesor(Profesor profesor) {
-		this.profesor = profesor;
+		Asignatura.profesor = profesor;
 	}
 	
 	/**
@@ -66,7 +66,7 @@ public class Asignatura {
 		String asignatura =
 				"\nNombre de la asignatura\t" + getNombre()
 				+ "\nCreditos:\t" + getCreditos()
-				 + "\nProfesor:\t" + getProfesor().getNombre()
+				 + "\nProfesor:\t" + Profesor.getNombre()
 				 + "\nCreditos:\t" + getCreditos()
 				 ;
 				

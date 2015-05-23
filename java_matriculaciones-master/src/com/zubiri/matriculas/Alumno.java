@@ -17,11 +17,11 @@ public class Alumno extends Persona {
 	
 	public Alumno(String dni, String nombre, String apellido, int añoInscripcion, String ciclo) {
 	
-		this.dni = dni;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.añoInscripcion = añoInscripcion;
-		this.ciclo = ciclo;
+		Persona.dni = dni;
+		Persona.nombre = nombre;
+		Persona.apellido = apellido;
+		Alumno.añoInscripcion = añoInscripcion;
+		Alumno.ciclo = ciclo;
 		
 	}
 	public  Alumno(Scanner sc){
@@ -55,7 +55,7 @@ public class Alumno extends Persona {
 	}
 	
 	public void setAñoInscripcion(int añoInscripcion) {
-		this.añoInscripcion = añoInscripcion;
+		Alumno.añoInscripcion = añoInscripcion;
 	}
 	
 	public ArrayList<Matricula> getMatriculas() {
@@ -71,7 +71,7 @@ public class Alumno extends Persona {
 	}
 
 	public void setCiclo(String ciclo) {
-		this.ciclo = ciclo;
+		Alumno.ciclo = ciclo;
 	}
 
 }

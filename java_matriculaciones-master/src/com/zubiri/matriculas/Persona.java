@@ -12,9 +12,9 @@ public abstract class Persona {
 	
 	public Persona(String dni, String nombre, String apellido) {
 		
-		this.dni = dni;
-		this.nombre = nombre;
-		this.apellido = apellido;
+		Persona.dni = dni;
+		Persona.nombre = nombre;
+		Persona.apellido = apellido;
 	}
 	public Persona (Scanner sc){
 	
@@ -31,7 +31,7 @@ public abstract class Persona {
 	}
 	
 	public void setDni(String dni) {
-		this.dni = dni;
+		Persona.dni = dni;
 	}
 	
 	public static String getNombre() {
@@ -39,7 +39,7 @@ public abstract class Persona {
 	}
 	
 	public void setNombre(String nombre) {
-		this.nombre = nombre;
+		Persona.nombre = nombre;
 	}
 	
 	public  static String getApellido() {
@@ -47,7 +47,7 @@ public abstract class Persona {
 	}
 	
 	public void setApellido(String apellido) {
-		this.apellido = apellido;
+		Persona.apellido = apellido;
 	}
 	
 	/**
